@@ -11,7 +11,6 @@ function App() {
 
     async function upload(e) {
       e.preventDefault();
-      if (file) {
         setMessage("Please wait while the file is being submitted");
         const startingTime = new Date()
   
@@ -28,7 +27,6 @@ function App() {
         const endingTime = new Date()
         
         console.log(`The upload/request took ${Math.abs(endingTime - startingTime) / 1000} seconds.`)
-      }
 
     }
     
@@ -40,7 +38,7 @@ function App() {
       <div className="App">
 
           <form className = "upload-form" onSubmit = {upload} encType = "multipart/form-data" >
-            <input className = "choose-file" type = "file" onChange = {onFileChange} />
+            <input className = "choose-file" type = "file" onChange = {onFileChange} required/>
             <button type = "submit" className = "submit"> Submit </button>
           </form>
 
