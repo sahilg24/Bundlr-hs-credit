@@ -67,7 +67,6 @@ app.post('/', upload.any(), async (req, res) => {
         /* Tags are needed to specify how the file is uploaded on the Arweave permaweb */
         const tags = [{ name: "Content-Type", value: file.mimetype}];
         const tx = bundlr.createTransaction(file.buffer, {tags});
-
         await tx.sign();
         const id = tx.id;
         await tx.upload();

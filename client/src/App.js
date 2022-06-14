@@ -11,28 +11,27 @@ function App() {
   const [link, setLink] = useState();
   const [message, setMessage] = useState();
 
-  async function upload(e) {
-    e.preventDefault();
-    if (file) {
+    async function upload(e) {
+      e.preventDefault();
       setMessage("Please wait while the file is being submitted");
       const startingTime = new Date()
-
+  
       const formData = new FormData();
       formData.append('uploadedFile', file)
-      const { data } = await api.post(formData);
-
+      const {data} = await api.post(formData);
+  
       setMessage(data.message);
       if (data?.id) {
-        console.log(data?.id);
         setLink(`https://arweave.net/${data.id}`)
       }
-
+  
       const endingTime = new Date()
-
+      
       console.log(`The upload/request took ${Math.abs(endingTime - startingTime) / 1000} seconds.`)
+
     }
 
-  }
+  
 
   const onFileChange = (e) => {
     setFile(e.target.files[0]);
