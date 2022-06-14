@@ -3,7 +3,7 @@ import './App.css';
 import * as api from './api'
 import image from './images/dragon.png'
 import Flip from "react-reveal/Flip";
-import LightSpeed from "react-reveal/LightSpeed";
+import Bounce from "react-reveal/Bounce";
 
 function App() {
 
@@ -50,8 +50,9 @@ function App() {
 
   return (
     <div className="App">
-      <section className='main-container'>
-        <LightSpeed>
+      <Bounce top><div className="header">Arweave Storage Using Bundlr Demo</div></Bounce>
+      <div className="bg-container">
+        <Flip top>
           <form className="upload-form" onSubmit={upload} encType="multipart/form-data" >
             <div class="file-input">
               <input type="file" id="file" class="choose-file" onChange={onFileChange} />
@@ -60,10 +61,9 @@ function App() {
                 <p class="file-name"></p>
               </label>
             </div>
-
-            <Flip top><button type="submit" className="submit"><span>Submit</span></button></Flip>
+            <button type="submit" className="submit"><span>Submit</span></button>
           </form>
-        </LightSpeed>
+        </Flip>
 
         {link &&
           <a href={link} target="_blank" rel="noreferrer">
@@ -78,7 +78,7 @@ function App() {
             {message}
           </p>
         }
-      </section>
+      </div>
     </div>
   );
 
