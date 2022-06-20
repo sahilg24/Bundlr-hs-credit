@@ -1,10 +1,26 @@
+.form-container {
+  width: 360px;
+  height: 350px;
+  background: linear-gradient(40deg, #ADD8E6, #064b62);
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+  transform: translateY(50px);
+}
+
 .upload-form {
-  width: 100%;
-  padding: 50px 0 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.form-field {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 16px;
+  border: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .submit {
@@ -22,7 +38,23 @@
   font-size: medium;
   text-align: center;
   padding-right: 40px;
+  transform: translateY(40px);
+}
 
+.error {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: red;
+  position: absolute;
+  transform: translate(10px, 20px);
+}
+
+.error-file {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: red;
+  position: absolute;
+  transform: translateX(210px);
 }
 
 .choose-file {
@@ -47,11 +79,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform .2s ease-out;
-}
-
-input:hover+label,
-input:focus+label {
-  transform: scale(1.02);
+  transform: translateY(30px);
 }
 
 input:focus+label {
@@ -83,7 +111,7 @@ input:focus+label {
   height: 25px;
   transition: all 0.5s;
   cursor: pointer;
-
+  transform: translateY(30px);
 }
 
 .submit span {
@@ -136,4 +164,11 @@ input:focus+label {
   text-align: center;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+.success-message {
+  font-family: "Roboto", sans-serif;
+  background-color: #2960b3;
+  padding: 15px;
+  color: white;
 }
