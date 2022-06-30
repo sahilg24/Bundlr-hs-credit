@@ -37,6 +37,14 @@ function App() {
       
       console.log(`The upload/request took ${Math.abs(endingTime - startingTime) / 1000} seconds.`)
 
+    const formData = new FormData();
+    formData.append('uploadedFile', file)
+    const { data } = await api.post(formData);
+
+    setMessage(data.message);
+    setUploaded(true);
+    if (data?.id) {
+      setLink(`https://arweave.net/${data.id}`)
     }
 
   
@@ -122,6 +130,7 @@ function App() {
         )}
       </section>
     </div>
+
   );
 
 
