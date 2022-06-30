@@ -92,17 +92,7 @@ function App() {
             <button type="submit" className="submit"><span> Submit </span></button>
           </form>
         </Flip>
-
-        {videoOpen && (
-          /* Based on the badge and content, this'll be changed to display that content rather than just a video*/
-          <div className = "video-popup">
-            <div className = "modal-background" onClick = {toggleVideo}></div>
-            <video controls className = "video" preload = "metadata">
-              <source src = "https://arweave.net/fwDHidsjj5pEstGDtgyOEhnaC99jBhHuwatrcMZxly4" type = "video/mp4" />
-            </video>
-          </div>
-        )}
-
+        
         {link &&
           <button onClick = {toggleVideo} className = "open-video">
             <img className="dragon-image" src={dragonImage} alt="dragon-img"
@@ -110,6 +100,20 @@ function App() {
             </img>
           </button>
         }
+
+        {videoOpen && (
+          /* Based on the badge and content, this'll be changed to display that content rather than just a video 
+             These are links to a 1.5 GB and a 150MB video.
+            https://arweave.net/12X5Efg2QMjzpmFmWG3fO6y8sQRu9GM2jMOH85iU36w
+            https://arweave.net/fwDHidsjj5pEstGDtgyOEhnaC99jBhHuwatrcMZxly4
+          */
+          <div className = "video-popup">
+            <div className = "modal-background" onClick = {toggleVideo}></div>
+            <video controls className = "video" preload = "auto">
+              <source src = "https://arweave.net/5ku_JgXlr_PAqzgzwa6GvxyH3f-lKP9G8tkWC6EFrf4" type = "video/mp4" />
+            </video>
+          </div>
+        )}
 
         {message && (
           <p className="message">
